@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robinson Dominguez — Portfolio</title>
+
+  <!-- Fuentes: Fraunces (títulos elegantes) + Space Mono (developer feel) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,400&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Hoja de estilos separada -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+  <!-- =============================================
+    BARRA DE NAVEGACIÓN
+    Sticky: se queda arriba mientras el usuario scrollea.
+  ============================================= -->
+  <nav class="navbar">
+    <div class="container">
+      <span class="nav-logo">robinson</span>
+
+      <!-- Links de navegación (anclas a secciones) -->
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">sobre mí</a></li>
+        <li><a href="#proyectos">proyectos</a></li>
+        <li><a href="#habilidades">habilidades</a></li>
+        <li><a href="#contacto">contacto</a></li>
+      </ul>
+
+      <!-- Controles de tema -->
+      <div class="nav-controles">
+        <!--
+          Selector de temas de COLOR.
+          Cada botón tiene data-tema con el nombre del tema.
+          JavaScript lee ese atributo y llama a cambiarTema().
+        -->
+        <div class="temas" role="group" aria-label="Cambiar tema de color">
+          <button class="tema-btn activo" data-tema="default" title="Azul">
+            <span class="tema-circulo" style="background:#2563eb"></span>
+          </button>
+          <button class="tema-btn" data-tema="verde" title="Verde">
+            <span class="tema-circulo" style="background:#10b981"></span>
+          </button>
+          <button class="tema-btn" data-tema="purpura" title="Púrpura">
+            <span class="tema-circulo" style="background:#7c3aed"></span>
+          </button>
+          <button class="tema-btn" data-tema="naranja" title="Naranja">
+            <span class="tema-circulo" style="background:#f59e0b"></span>
+          </button>
+        </div>
+
+        <!-- Toggle modo claro / oscuro -->
+        <button class="btn-modo" id="btnModo" aria-label="Cambiar modo claro/oscuro">
+          <span id="iconoModo">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =============================================
+    HERO — Sección de presentación
+  ============================================= -->
+  <header class="hero" id="inicio">
+    <div class="container">
+
+      <div class="hero-contenido">
+        <!-- Foto de perfil -->
+        <div class="hero-foto">
+          <img src="./img/Yo.jpeg" alt="Foto de Robinson Dominguez Ulloa" />
+        </div>
+
+        <!-- Texto principal -->
+        <div class="hero-texto">
+          <span class="etiqueta">Programador Junior · Bucaramanga, Colombia</span>
+
+          <h1 class="hero-titulo">
+            Robinson<br />
+            <em>Dominguez</em><br />
+            Ulloa
+          </h1>
+
+          <p class="hero-descripcion">
+            Desarrollador en formación con enfoque en backend y bases de datos.
+            Curioso por naturaleza, metódico por convicción. Construyo cosas
+            que funcionan y que otro desarrollador puede entender.
+          </p>
+
+          <div class="hero-acciones">
+            <a href="#proyectos" class="btn-primario">Ver proyectos →</a>
+            <a href="#contacto" class="btn-secundario">Contacto</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =============================================
+    SOBRE MÍ
+  ============================================= -->
+  <section id="sobre-mi" class="seccion">
+    <div class="container">
+
+      <div class="seccion-cabecera">
+        <span class="etiqueta">01 / Sobre mí</span>
+        <h2 class="seccion-titulo">¿Quién soy?</h2>
+      </div>
+
+      <div class="sobre-grid">
+        <p class="sobre-parrafo">
+          Desarrollador de software junior en formación, con experiencia en
+          creación de sitios web y bases de datos. Me adapto al cambio constante
+          y busco siempre la mejor manera de expresar soluciones. Destaco por
+          ver los problemas desde múltiples ángulos y comunicarme de forma
+          clara y asertiva.
+        </p>
+        <p class="sobre-parrafo">
+          Domino varios lenguajes de programación, utilizo metodologías ágiles
+          y las mejores prácticas en codificación. Valoro el trabajo en equipo
+          y aporto valor a los proyectos combinando experiencia técnica con
+          creatividad.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+    PROYECTOS
+    Cada proyecto tiene: imagen real, nombre, descripción, link a GitHub.
+  ============================================= -->
+  <section id="proyectos" class="seccion seccion-oscura">
+    <div class="container">
+
+      <div class="seccion-cabecera">
+        <span class="etiqueta">02 / Trabajo</span>
+        <h2 class="seccion-titulo">Proyectos</h2>
+      </div>
+
+      <div class="proyectos-grid">
+
+        <!-- ── Proyecto 1: Pizzeria Don Piccolo ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/MySQL.png" alt="Proyecto Pizzeria Don Piccolo — MySQL" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">Base de datos</span>
+            </div>
+            <h3 class="tarjeta-titulo">Pizzeria Don Piccolo</h3>
+            <p class="tarjeta-descripcion">
+              Base de datos diseñada para la gestión completa de una pizzería:
+              registro de pizzas, ingredientes, clientes, zonas horarias y repartidores.
+            </p>
+            <a
+              href="https://github.com/robinsondominguez/MySQL_S2_Projecto_DominguezUlloaRobinson.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 2: CampusMusic ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/MongoDB.png" alt="Proyecto CampusMusic — MongoDB" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">MongoDB</span>
+              <span class="tag">NoSQL</span>
+            </div>
+            <h3 class="tarjeta-titulo">CampusMusic</h3>
+            <p class="tarjeta-descripcion">
+              Base de datos para una escuela de música. Registro de estudiantes,
+              instrumentos, cursos, cupos y distintos roles con sus propios permisos.
+            </p>
+            <a
+              href="https://github.com/David-Cardozo/PROYECTO_MONGODB2_S2_CARRILLODAVID_DOMINGUEZROBINSON.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 3: LMS ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/JavaScript.png" alt="Proyecto LMS — JavaScript" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Frontend</span>
+            </div>
+            <h3 class="tarjeta-titulo">Learning Management System</h3>
+            <p class="tarjeta-descripcion">
+              Plataforma escolar web construida con JavaScript puro. Cumple todos
+              los requisitos de un LMS real, incluyendo consumo de APIs externas.
+            </p>
+            <a
+              href="https://github.com/SharickGPinto/PROYECTO-LMS_PINTOSHARICK_DOMINGUEZROBINSON.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 4: Kario Media ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/Html.png" alt="Proyecto Kario Media — HTML/CSS" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Diseño web</span>
+            </div>
+            <h3 class="tarjeta-titulo">Kario Media</h3>
+            <p class="tarjeta-descripcion">
+              Página web de gestión de proyectos. Desarrollada mientras se aprendía
+              HTML y CSS, con foco en el diseño de los requerimientos funcionales.
+            </p>
+            <a
+              href="https://github.com/gamaz-19/PROYECTO_HTML_GOMEZMARIA_VARGASJHORGUEN_DOMINGUEZROBINSON.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 5: Diario de un viaje ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/Git.png" alt="Proyecto Diario de un viaje — Git" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">Git</span>
+              <span class="tag">Control de versiones</span>
+            </div>
+            <h3 class="tarjeta-titulo">Diario de un Viaje</h3>
+            <p class="tarjeta-descripcion">
+              Diario de viaje colaborativo construido íntegramente con comandos Git.
+              Registra experiencias y recomendaciones de destinos turísticos.
+            </p>
+            <a
+              href="https://github.com/robinsondominguez/Ejercicio-examen-.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 6: TecnoStore ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/Java.png" alt="Proyecto TecnoStore — Java" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Consola</span>
+              <span class="tag">POO</span>
+            </div>
+            <h3 class="tarjeta-titulo">TecnoStore</h3>
+            <p class="tarjeta-descripcion">
+              Sistema de consola en Java para automatizar la gestión de ventas,
+              inventario y clientes de la empresa TecnoStore.
+            </p>
+            <a
+              href="https://github.com/robinsondominguez/JavaProject_S1_DominguezRobinson.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Proyecto 7: LogiTrack ── -->
+        <article class="tarjeta-proyecto revelar">
+          <div class="tarjeta-imagen">
+            <img src="./img/SpringBoot.png  " alt="Proyecto TecnoStore — Java" loading="lazy" />
+          </div>
+          <div class="tarjeta-cuerpo">
+            <div class="tarjeta-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Consola</span>
+              <span class="tag">POO</span>
+              <span class="tag">SpringBoot</span>
+            </div>
+            <h3 class="tarjeta-titulo">LogiTrack</h3>
+            <p class="tarjeta-descripcion">
+              Sistema de SprigBoot en Java para lautomatizacion de consultas, guardados, editar, eliminar,
+              inventario y productos de las bodegas de la empresa LogiTrack.
+            </p>
+            <a
+              href="https://github.com/robinsondominguez/JavaProject_S1_DominguezRobinson.git"
+              class="tarjeta-link"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver en GitHub ↗
+            </a>
+          </div>
+        </article>  
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+    HABILIDADES
+  ============================================= -->
+  <section id="habilidades" class="seccion">
+    <div class="container">
+
+      <div class="seccion-cabecera">
+        <span class="etiqueta">03 / Stack</span>
+        <h2 class="seccion-titulo">Habilidades</h2>
+      </div>
+
+      <div class="habilidades-grid">
+        <div class="habilidad revelar">HTML &amp; CSS</div>
+        <div class="habilidad revelar">JavaScript</div>
+        <div class="habilidad revelar">Python</div>
+        <div class="habilidad revelar">Java</div>
+        <div class="habilidad revelar">MySQL</div>
+        <div class="habilidad revelar">MongoDB</div>
+        <div class="habilidad revelar">Spring Boot</div>
+        <div class="habilidad revelar">Git &amp; GitHub</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+    CONTACTO
+  ============================================= -->
+  <section id="contacto" class="seccion seccion-oscura">
+    <div class="container">
+
+      <div class="seccion-cabecera">
+        <span class="etiqueta">04 / Contacto</span>
+        <h2 class="seccion-titulo">Hablemos</h2>
+      </div>
+
+      <div class="contacto-grid">
+        <a href="mailto:robinsondominguezulloa349@gmail.com" class="contacto-item">
+          <span class="contacto-icono">✉</span>
+          <span class="contacto-label">Email</span>
+          <span class="contacto-valor">robinsondominguezulloa349@gmail.com</span>
+        </a>
+
+        <a href="https://github.com/robinsondominguez" target="_blank" rel="noopener" class="contacto-item">
+          <span class="contacto-icono">⌥</span>
+          <span class="contacto-label">GitHub</span>
+          <span class="contacto-valor">robinsondominguez</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/robinson-dominguez-ulloa-b15536370/" target="_blank" rel="noopener" class="contacto-item">
+          <span class="contacto-icono">◈</span>
+          <span class="contacto-label">LinkedIn</span>
+          <span class="contacto-valor">robinson-dominguez-ulloa</span>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1GpXuOri8KgclvKUDsTqeU9M1Po9hE1yR/view?usp=sharing" target="_blank" rel="noopener" class="contacto-item">
+          <span class="contacto-icono">↓</span>
+          <span class="contacto-label">CV</span>
+          <span class="contacto-valor">Descargar portafolio</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+    FOOTER
+  ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 · Robinson Dominguez Ulloa · Programador Junior</p>
+    </div>
+  </footer>
+
+
+  <!-- Script separado, cargado al final para no bloquear el HTML -->
+  <script src="./js/scripts.js"></script>
+
+</body>
+</html>
